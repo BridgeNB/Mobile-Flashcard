@@ -8,9 +8,14 @@ export const getDecks = ( decks ) => ({
 export const addDeck = ( deck ) => ({
   type: Types.ADD_DECK,
   deck,
-})
+});
+
+export const deleteDeck = ( deck ) => ({
+  type: Types.DELETE_DECK,
+  deck,
+});
 
 export const addQuestions = ( params ) => ({
   type: Types.ADD_QUESTION,
   params,
-})
+});

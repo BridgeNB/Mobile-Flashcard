@@ -7,7 +7,6 @@ import { StackNavigator, TabNavigator } from 'react-navigation';
 import NewDeck from './deck/NewDeck';
 import DeckList from './deck/DeckList';
 
-
 const Tabs = TabNavigator({
   DeckList: {
     screen: DeckList,

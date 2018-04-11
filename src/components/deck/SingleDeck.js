@@ -1,21 +1,3 @@
-// import React, { Component } from 'react';
-// import { View, Stylesheet, Text } from 'react-native';
-//
-// class SingleDeck extends Component {
-//   render() {
-//     const {title, questions} = this.props;
-//     return (
-//       <View>
-//         {console.log(this.props)}
-//         <Text>This is single deck</Text>
-//         <Text>{questions && questions.length} cards</Text>
-//       </View>
-//     )
-//   }
-// }
-//
-// export default SingleDeck;
-
 import React from 'react';
 import {View, StyleSheet, Text} from 'react-native';
 
