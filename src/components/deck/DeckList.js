@@ -33,7 +33,7 @@ class DeckList extends Component {
           backgroundColor="transparent"
           >
           <TouchableOpacity onPress={() =>
-              this.props.navigation.navigate('IndividualDeck', item)}>
+              this.props.navigation.navigate('DeckDetail', item)}>
               <SingleDeck
                   title={item.title}
                   questions={item.questions}/>

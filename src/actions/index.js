@@ -15,7 +15,7 @@ export const deleteDeck = ( deck ) => ({
   deck,
 });
 
-export const addQuestions = ( params ) => ({
+export const addQuestion = ( params ) => ({
   type: Types.ADD_QUESTION,
   params,
 });
