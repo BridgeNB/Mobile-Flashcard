@@ -11,6 +11,13 @@ function decks(state = {}, action) {
       let newState = {...state};
       delete newState[deck];
       return newState;
+    case Types.ADD_QUESTION:
+      const { title, questions, question, answer } = action.params;
+      const newQuestion = JSON.parse(JSON.stringify(questions)).concat([{ question, answer}]);
+      return {
+        ...state,
+        [title]: {...state[title], questions: newQuestions};
+      }
     default:
       return state;
   }

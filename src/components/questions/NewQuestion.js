@@ -1,8 +1,8 @@
 import React from 'react';
-import {Alert, StyleSheet, Text, TextInput, TouchableOpacity, View} from 'react-native';
-import {addQuestion} from '../../actions';
-import {connect} from 'react-redux';
-import {addQuestionToDeck} from '../../utils/storageApi';
+import { Alert, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { addQuestion } from '../../actions';
+import { connect } from 'react-redux';
+import { addQuestionToDeck } from '../../utils/storageApi';
 
 class NewQuestion extends React.Component {
 
@@ -16,11 +16,11 @@ class NewQuestion extends React.Component {
         const {title, questions} = this.props.navigation.state.params;
 
         if (question === '') {
-            Alert.alert('Mandatory', 'Question cannot be empty');
+            Alert.alert('Alert', 'Question cannot be empty');
             return;
         }
         if (answer === '') {
-            Alert.alert('Mandatory', 'Answer cannot be empty');
+            Alert.alert('Alert', 'Answer cannot be empty');
             return;
         }
 
