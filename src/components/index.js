@@ -4,11 +4,11 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import reducer from '../reducers/index';
 import { StackNavigator, TabNavigator } from 'react-navigation';
-import NewDeck from './deck/NewDeck';
-import DeckList from './deck/DeckList';
-import DeckDetail from './deck/DeckDetail';
-import Quiz from './quiz/Quiz';
-import NewQuestion from './questions/NewQuestion';
+import NewDeck from './NewDeck';
+import DeckList from './DeckList';
+import DeckDetail from './DeckDetail';
+import Quiz from './Quiz';
+import NewQuestion from './NewQuestion';
 
 const Tabs = TabNavigator({
   DeckList: {

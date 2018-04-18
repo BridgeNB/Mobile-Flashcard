@@ -8,8 +8,8 @@ import {
   Alert
 } from 'react-native';
 import { connect } from 'react-redux';
-import { createDeck } from '../../utils/storageApi';
-import { addDeck } from '../../actions/index'
+import { createDeck } from '../utils/storageApi';
+import { addDeck } from '../actions/index'
 
 class NewDeck extends Component {
   componentWillMount() {

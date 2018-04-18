@@ -10,8 +10,8 @@ import {
 } from 'react-native';
 import Swipeout from 'react-native-swipeout';
 import {connect} from 'react-redux';
-import {getDecks, deleteDeck} from '../../actions/index';
-import {fetchDecks, removeDeck} from '../../utils/storageApi';
+import {getDecks, deleteDeck} from '../actions/index';
+import {fetchDecks, removeDeck} from '../utils/storageApi';
 import SingleDeck from './SingleDeck';
 
 class DeckList extends Component {

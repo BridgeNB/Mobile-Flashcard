@@ -1,8 +1,8 @@
 import React from 'react';
 import { Alert, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
-import { addQuestion } from '../../actions';
+import { addQuestion } from '../actions';
 import { connect } from 'react-redux';
-import { addQuestionToDeck } from '../../utils/storageApi';
+import { addQuestionToDeck } from '../utils/storageApi';
 
 class NewQuestion extends React.Component {
 
