@@ -16,8 +16,8 @@ function decks(state = {}, action) {
       const newQuestion = JSON.parse(JSON.stringify(questions)).concat([{ question, answer}]);
       return {
         ...state,
-        [title]: {...state[title], questions: newQuestions};
-      }
+        [title]: {...state[title], questions: newQuestion},
+      };
     default:
       return state;
   }

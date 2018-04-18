@@ -20,36 +20,25 @@ class DeckList extends Component {
     fetchDecks().then(decks => dispatch(getDecks(decks))).then(() => this.setState(() => ({ready: true})));
   }
 
-  deleteDeck() {
-    console.log('close');
+  deleteDeck = () => {
+    console.log(this.props);
+    // removeDeck()
   }
 
   renderItem = ({item}) => {
-    return (
-      <View>
-        <Swipeout
-          right={swipeBtns}
-          autoClose={true}
-          backgroundColor="transparent"
-          >
-          <TouchableOpacity onPress={() =>
-              this.props.navigation.navigate('DeckDetail', item)}>
-              <SingleDeck
-                  title={item.title}
-                  questions={item.questions}/>
-          </TouchableOpacity>
-        </Swipeout>
-      </View>
-    )
+    return (<View>
+      <Swipeout right={swipeBtns} autoClose={true} backgroundColor="transparent" onPress={this.deleteDeck}>
+        <TouchableOpacity onPress={() => this.props.navigation.navigate('DeckDetail', item)}>
+          <SingleDeck title={item.title} questions={item.questions}/>
+        </TouchableOpacity>
+      </Swipeout>
+    </View>)
   }
 
   render() {
     const {decks} = this.props;
     return (<View style={styles.deck}>
-      <FlatList data={Object.values(decks).sort((a, b) => a.title > b.title)}
-        renderItem={this.renderItem.bind(this)}
-         keyExtractor={(item, index) => index}
-       />
+      <FlatList data={Object.values(decks).sort((a, b) => a.title > b.title)} renderItem={this.renderItem.bind(this)} keyExtractor={(item, index) => index}/>
     </View>);
   }
 }
@@ -64,10 +53,11 @@ const styles = StyleSheet.create({
     height: Dimensions.get('window').height
   }
 });
-const swipeBtns = [{
-     text: 'Delete',
-     backgroundColor: 'red',
-     onPress: () => {this.deleteDeck()}
-}];
+const swipeBtns = [
+  {
+    text: 'Delete',
+    backgroundColor: 'red'
+  }
+];
 
 export default connect(mapStateToProps)(DeckList);

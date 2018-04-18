@@ -6,12 +6,8 @@ class DeckDetail extends Component {
     let title = this.props.navigation.state.params.title;
     let questions = this.props.navigation.state.params.questions;
     return (
-      <View>
-        <View>
-            <View style={{
-              flexDirection: 'column',
-              justifyContent: 'center',
-              alignItems: 'center'}}
+        <View style={styles.container}>
+            <View style={styles.cardIntro}
               >
                 <Text style={{fontSize: 36}}>{title}</Text>
                 <Text style={{fontSize: 22, marginTop: 12}}>{questions.length} cards
@@ -19,6 +15,7 @@ class DeckDetail extends Component {
             </View>
 
             <TouchableOpacity
+                style={styles.button}
                 onPress={() => {
                     this.props.navigation.navigate('NewQuestion', {
                         title,
@@ -26,10 +23,11 @@ class DeckDetail extends Component {
                     });
                 }}
             >
-                <Text>Add Card</Text>
+                <Text style={styles.text}>Add Question</Text>
             </TouchableOpacity>
 
             <TouchableOpacity
+                style={styles.button}
                 onPress={() => {
                     this.props.navigation.navigate('Quiz', {
                         title,
@@ -37,13 +35,36 @@ class DeckDetail extends Component {
                     });
                 }}
               >
-                <Text>Start Quiz</Text>
+                <Text style={styles.text}>Start Quiz</Text>
             </TouchableOpacity>
 
         </View>
-      </View>
+
     );
   }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    paddingTop: 20,
+  },
+  cardIntro: {
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  button: {
+    backgroundColor: 'black',
+    padding: 10,
+    height: 40,
+    margin: 16,
+  },
+  text: {
+    color: 'white',
+    fontWeight: 'bold',
+  }
+})
 
 export default DeckDetail;

@@ -79,20 +79,19 @@ const style = StyleSheet.create({
     },
     input: {
         width: 300,
-        height: 56,
-        padding: 12,
-        borderWidth: 1,
-        borderColor: '#7f7f7f',
-        margin: 16
+        height: 50,
+        padding: 10,
+        margin: 16,
+        backgroundColor: 'grey'
     },
     submitButton: {
-        backgroundColor: '#000',
-        padding: 12,
-        height: 44,
+        backgroundColor: 'black',
+        padding: 10,
+        height: 40,
     },
     submitText: {
         color: '#fff',
-        fontSize: 22,
+        fontSize: 20,
         textAlign: 'center',
     },
 });
