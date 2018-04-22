@@ -32,6 +32,14 @@ export function initialData() {
   return defaultData;
 }
 
+export function fetchDeck (title) {
+    return AsyncStorage.getItem(DECK_STORAGE_KEY)
+        .then( (results) => {
+            const data = JSON.parse(results);
+            return data[title]
+        })
+}
+
 export function fetchDecks() {
   return AsyncStorage.getItem(DECKS_STORAGE_KEY).then(results => {
     return results === null ? initialData() : JSON.parse(results)
@@ -55,7 +63,7 @@ export function removeDeck(deckName) {
 export function addQuestionToDeck({ card, deckName }) {
   return AsyncStorage.getItem(DECKS_STORAGE_KEY, (err, result) => {
     let decks = JSON.parse(result);
-    let newQuestions = JSON.parse(JSON.stringify(decks[deckName].questions));
+    let newQuestions = [...decks[deckName].questions];
     newQuestions[newQuestions.length] = card; // need to understand
     const value = JSON.stringify({
       [deckName]: {title: deckName, questions: newQuestions},
