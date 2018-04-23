@@ -9,6 +9,7 @@ import DeckList from './DeckList';
 import DeckDetail from './DeckDetail';
 import Quiz from './Quiz';
 import NewQuestion from './NewQuestion';
+import { setLocalNotification } from '../utils/notifications';
 
 const Tabs = TabNavigator({
   DeckList: {
@@ -54,6 +55,9 @@ const AppNavigator = StackNavigator({
 });
 
 class Index extends Component {
+  componentDidMount() {
+    setLocalNotification()
+  }
   render() {
     return <Provider store={createStore(reducer)}>
       <View style={{flex: 1}}>

@@ -33,7 +33,7 @@ export function initialData() {
 }
 
 export function fetchDeck (title) {
-    return AsyncStorage.getItem(DECK_STORAGE_KEY)
+    return AsyncStorage.getItem(DECKS_STORAGE_KEY)
         .then( (results) => {
             const data = JSON.parse(results);
             return data[title]

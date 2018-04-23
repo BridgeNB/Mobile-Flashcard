@@ -5,6 +5,8 @@ function decks(state = {}, action) {
   switch(action.type) {
     case Types.FETCH_DECKS:
       return {...state, ...decks};
+    case Types.GET_DECK:
+      return {...state, deck: action.deck};
     case Types.ADD_DECK:
       return {...state, ...deck};
     case Types.DELETE_DECK:

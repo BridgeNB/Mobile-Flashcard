@@ -5,6 +5,11 @@ export const getDecks = ( decks ) => ({
   decks,
 });
 
+export const getDeck = ( deck ) => ({
+  type: Types.GET_DECK,
+  deck
+})
+
 export const addDeck = ( deck ) => ({
   type: Types.ADD_DECK,
   deck,
